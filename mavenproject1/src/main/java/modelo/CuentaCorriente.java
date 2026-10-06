@@ -1,13 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author abrah
- */
-public class CuentaCorriente {
-    
+public class CuentaCorriente extends Cuenta {
+    private double sobregiro;
+
+    public CuentaCorriente(String titular, double saldo, double sobregiro) {
+        super(titular, saldo);
+        this.sobregiro = sobregiro;
+    }
+
+    @Override
+    public double calcularInteres() {
+        return saldo * 0.01;
+    }
 }
